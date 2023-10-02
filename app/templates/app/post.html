@@ -115,7 +115,6 @@
                       </p>
                       <form method="POST">
                         {% csrf_token %}
-                        {% csrf_token %}
                         {{form.content}}
                       <div class="grid-3">
                      <input type="hidden" name="post_id" value="{{post.id}}" />
