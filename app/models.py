@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Subscribe(models.Model):
-    email = models.EmailField(max_length=200)
+    email = models.EmailField(max_length=100)
     date = models.DateTimeField(auto_now=True)
 
 class Tag(models.Model):
@@ -29,6 +29,7 @@ class Post(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to="images/")
     tags = models.ManyToManyField(Tag, blank=True, related_name='post')
     view_count=models.IntegerField(null=True, blank=True)
+    is_featured = models.BooleanField(default=False)
 
 
 class Comments(models.Model):
